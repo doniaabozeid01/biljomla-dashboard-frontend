@@ -1,0 +1,141 @@
+<div class="parent w-100 d-flex justify-content-between align-items-center p-3 m-0 bg-white position-relative">
+
+
+    <div class="w-25 d-none d-md-block">
+        <div class="input-group ">
+            <input type="text" class="form-control" placeholder="search for..." aria-label="search for..."
+                aria-describedby="basic-addon2">
+            <span class="input-group-text bg-dark-blue " id="basic-addon2">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        </div>
+    </div>
+
+    <div class="w-25 d-block d-md-none">
+        <i class="fa-solid fa-bars" (click)="slimSidebar()"></i>
+    </div>
+
+
+    <div class="d-flex justify-content-center align-items-center">
+
+
+        <i class="fa-solid fa-magnifying-glass fs-4 me-3 d-block d-md-none" (click)="toggleSearch()"></i>
+        <!-- search icons -->
+        <div *ngIf="showSearch" class="search-box p-3 bg-white my-1 w-90">
+            <div class="input-group">
+                <input type="text" class="form-control bg-light-gray" placeholder="search for..."
+                    aria-label="search for..." aria-describedby="basic-addon2">
+                <span class="input-group-text bg-dark-blue" id="basic-addon2">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-center align-items-center position-relative ">
+            <!-- Notifications Icon -->
+            <div class="position-relative pos-aft me-3" (click)="toggleNotifications('bell')">
+                <i class="fa-solid fa-bell fs-4"></i>
+                <div *ngIf="showBellNotifications" class="notification-box position-absolute p-0">
+                    <p class="bg-dark-blue p-3 py-2">Alerts Center</p>
+                    <div class="notification-item p-2">
+                        <div class="d-flex">
+                            <img src="path_to_image.jpg" alt="user-avatar" class="notification-img">
+                            <div class="notification-content">
+                                <p class="notification-date">2025-04-27</p>
+                                <p class="notification-message">Your package has been shipped!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notification-item p-2">
+                        <div class="d-flex">
+                            <img src="path_to_image.jpg" alt="user-avatar" class="notification-img">
+                            <div class="notification-content">
+                                <p class="notification-date">2025-04-26</p>
+                                <p class="notification-message">Your order is being prepared.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Icon -->
+            <div class="position-relative pos-aft me-3 lineBeforeProfile" (click)="toggleNotifications('envelope')">
+                <i class="fa-solid fa-envelope fs-4"></i>
+                <div *ngIf="showEnvelopeNotifications" class="notification-box position-absolute p-0">
+                    <p class="bg-dark-blue p-3 py-2">Message Center</p>
+
+                    <div class="notification-item p-2">
+                        <div class="d-flex">
+                            <img src="path_to_image.jpg" alt="user-avatar" class="notification-img">
+                            <div class="notification-content">
+                                <p class="notification-date">2025-04-27</p>
+                                <p class="notification-message">You have a new message!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="notification-item p-2">
+                        <div class="d-flex">
+                            <img src="path_to_image.jpg" alt="user-avatar" class="notification-img">
+                            <div class="notification-content">
+                                <p class="notification-date">2025-04-26</p>
+                                <p class="notification-message">Reminder: Your subscription is due for renewal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- profile Icon -->
+            <div class="position-relative " (click)="toggleNotifications('profile')">
+                <div class="d-flex align-items-center m-0 ms-2 p-0 pointer">
+                    <p class="mb-0 me-1">Ahmed</p>
+                    <i class="fa-solid fa-user fs-4"></i>
+                </div>
+                <div *ngIf="showProfile" class="notification-box position-absolute p-0">
+                    <!-- <p class="bg-dark-blue p-3 py-2">Message Center</p> -->
+
+                    <div class="py-2 px-4  inProfileHov">
+                        <div class="d-flex ">
+                            <i class="fa-solid fa-user fs-5 me-2"></i>
+                            <p class="mb-0">Profile</p>
+                        </div>
+                    </div>
+
+                    <div class="py-2 px-4  inProfileHov border-bottom">
+                        <div class="d-flex ">
+                            <i class="fa-solid fa-gear fs-5 me-2"></i>
+                            <p class="mb-0">Settings</p>
+                        </div>
+                    </div>
+
+                    <div class="py-2 px-4  inProfileHov">
+                        <div class="d-flex ">
+                            <i class="fa-solid fa-right-from-bracket fs-5 me-2"></i>
+                            <p class="mb-0">Log out</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

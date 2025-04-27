@@ -1,0 +1,136 @@
+.parent{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* الظل الذي يظهر تحت العنصر */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* تكبير الأيقونات */
+.fs-2 {
+    font-size: 2rem; /* تكبير الأيقونة */
+}
+
+/* إضافة الرقم أعلى الأيقونات */
+.position-relative {
+    position: relative;
+}
+
+.position-relative .notification-box {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30px; /* وضع النافذة تحت الأيقونة */
+    right: 0%; /* تعديل مكان النافذة */
+    z-index: 999;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.notification-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.notification-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-date {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.notification-message {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* للرقم على الأيقونات */
+.position-relative i {
+    position: relative;
+}
+
+.pos-aft i::after {
+    content: "3"; /* رقم افتراضي كمثال */
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 0.8rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+}
+
+
+
+// .search-container {
+//     position: relative;  /* هذا سيبقي العنصر الأم كما هو */
+// }
+
+.search-box {
+    position: absolute;
+    top: 100%;  /* يضع الـ search-box تحت العنصر الذي يحتوي عليه */
+    left: 5%;
+    // width: 100vw;  /* عرض الـ search-box يكون كامل العرض */
+    z-index: 9999;  /* تأكد أن الـ search-box يظهر فوق العناصر الأخرى */
+}
+
+
+.w-90{
+    width: 90%;
+    border-radius: 10px;
+}
+
+
+
+.inProfileHov:hover{
+    background-color: #ebebeb;
+}
+
+
+.inProfileHov i{
+    color: #dadada;
+}
+
+
+
+.lineBeforeProfile::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: #7a7a7a;
+    left: 145%;
+    
+}
+
+
+
+.pointer{
+    cursor: pointer;
+}

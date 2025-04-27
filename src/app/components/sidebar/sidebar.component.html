@@ -1,0 +1,79 @@
+<div class="parent bg-dark-blue w-100 px-3 text-white h-100">
+
+    <div class="d-flex justify-content-center align-items-center border-bottom p-2 py-3">
+      <i class="fa-solid fa-face-smile-beam fs-3 me-2"></i>
+      <h3 *ngIf="!(slimSidebar$ | async)" class="mb-0">Bialjomla</h3>
+    </div>
+  
+    <div class="d-flex justify-content-start align-items-center border-bottom p-2 py-3 routerHov" [routerLink]="'/home'" [routerLinkActive]="'active'"
+      [ngClass]="{ 'flex-column justify-content-center': (slimSidebar$ | async), 'flex-row justify-content-start': !(slimSidebar$ | async) }">
+      <i class="fa-solid fa-gauge-high me-1 fs-6"></i>
+      <h5 class="mb-0" [ngClass]="{ 'slim-text': (slimSidebar$ | async), 'normal-text': !(slimSidebar$ | async) }">Dashboard</h5>
+    </div>
+  
+    <div>
+      <div>
+        <p class="text-secondary m-0 py-2"
+          [ngClass]="{ 'text-center': (slimSidebar$ | async), 'slim-text': (slimSidebar$ | async), 'normal-text': !(slimSidebar$ | async) }">
+          INTERFACE</p>
+      </div>
+  
+      <div class="d-flex flex-column">
+        <!-- Components Section -->
+        <div (click)="toggleSection('components', $event)" class="d-flex  align-items-center p-2 py-3 routerHov" [routerLink]="'/components'" [routerLinkActive]="'active'"
+          style="cursor: pointer;"
+          [ngClass]="{ 'justify-content-center': (slimSidebar$ | async), 'justify-content-between': !(slimSidebar$ | async) }">
+          <div class="d-flex align-items-center"
+            [ngClass]="{ 'flex-column justify-content-center': (slimSidebar$ | async), 'flex-row justify-content-start': !(slimSidebar$ | async) }">
+            <i class="fa-solid fa-gear me-1"></i>
+            <p class="mb-0" [ngClass]="{ 'slim-text': (slimSidebar$ | async), 'normal-text': !(slimSidebar$ | async) }">Components
+            </p>
+          </div>
+          <i *ngIf="!(slimSidebar$ | async) && openSection !== 'components'" class="fa-solid fa-arrow-right"></i>
+          <i *ngIf="!(slimSidebar$ | async) && openSection === 'components'" class="fa-solid fa-arrow-down"></i>
+        </div>
+  
+        <div *ngIf="openSection === 'components'" class="bg-white text-black p-3 border rounded" [ngClass]="{ 'sidebar-popup': (slimSidebar$ | async), 'bg-white text-black p-3 border rounded': !(slimSidebar$ | async) }"
+          [style.top.px]="popupTop"
+          [style.left.%]="103">
+          <h6 class="text-secondary">Custom Components:</h6>
+          <ul class="list-unstyled ms-2">
+            <li class="li-hov">Page 1</li>
+            <li class="li-hov">Page 2</li>
+          </ul>
+        </div>
+  
+        <!-- Utilities Section -->
+        <div (click)="toggleSection('utilities', $event)" class="d-flex  align-items-center p-2 py-3 routerHov" [routerLink]="'/components'" [routerLinkActive]="'active'"
+          style="cursor: pointer;"
+          [ngClass]="{ 'justify-content-center': (slimSidebar$ | async), 'justify-content-between': !(slimSidebar$ | async) }">
+          <div class="d-flex  align-items-center"
+            [ngClass]="{ 'flex-column justify-content-center': (slimSidebar$ | async), 'flex-row justify-content-start': !(slimSidebar$ | async) }">
+            <i class="fa-solid fa-screwdriver-wrench me-1"></i>
+            <p class="mb-0" [ngClass]="{ 'slim-text': (slimSidebar$ | async), 'normal-text': !(slimSidebar$ | async) }">Utilities
+            </p>
+          </div>
+          <i *ngIf="!(slimSidebar$ | async) && openSection !== 'utilities'" class="fa-solid fa-arrow-right"></i>
+          <i *ngIf="!(slimSidebar$ | async) && openSection === 'utilities'" class="fa-solid fa-arrow-down"></i>
+        </div>
+  
+        <div *ngIf="openSection === 'utilities'" class="bg-white text-black p-3 border rounded" [ngClass]="{ 'sidebar-popup': (slimSidebar$ | async), 'bg-white text-black p-3 border rounded': !(slimSidebar$ | async) }"
+          [style.top.px]="popupTop"
+          [style.left.%]="103">
+          <p class="text-secondary">Custom Utilities:</p>
+          <ul class="list-unstyled ms-2">
+            <li class="li-hov">Page 1</li>
+            <li class="li-hov">Page 2</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+    <div class=" mt-4 hide">
+      <div class="out-arrow m-auto" (click)="slimSidebar()">
+        <i *ngIf="!(slimSidebar$ | async)" class="fa-solid fa-arrow-left"></i>
+        <i *ngIf="(slimSidebar$ | async)" class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+  
