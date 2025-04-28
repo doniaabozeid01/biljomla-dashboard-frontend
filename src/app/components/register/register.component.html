@@ -1,0 +1,58 @@
+<!-- register.component.html -->
+
+<div class="parent w-100 vh-100 bg-light-gray d-flex justify-content-center align-items-center">
+
+    <div class="content w-40 bg-white rounded shadow d-flex overflow-hidden">
+  
+      <!-- Left side: Image -->
+      <div class="w-50 bg-light d-flex justify-content-center align-items-center d-none d-md-flex">
+        <img src="../../../assets/Animation - 1745860607516.gif" alt="Register" class="">
+      </div>
+  
+      <!-- Right side: Form -->
+      <div class="w-50 p-4 d-flex flex-column justify-content-center">
+  
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  
+          <h4 class="mb-4 text-center fw-lighter">Register</h4>
+  
+          <div class="mb-3">
+            <!-- <label for="firstName" class="form-label">First Name</label> -->
+            <input type="text" id="firstName" class="form-control" placeholder="First Name" formControlName="firstName">
+          </div>
+  
+          <div class="mb-3">
+            <!-- <label for="lastName" class="form-label">Last Name</label> -->
+            <input type="text" id="lastName" class="form-control" placeholder="Last Name" formControlName="lastName">
+          </div>
+  
+          <div class="mb-3">
+            <!-- <label for="email" class="form-label">Email Address</label> -->
+            <input type="email" id="email" class="form-control" placeholder="Email Address" formControlName="email">
+          </div>
+  
+          <div class="mb-3">
+            <!-- <label for="password" class="form-label">Password</label> -->
+            <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password">
+          </div>
+  
+          <div class="mb-3">
+            <!-- <label for="confirmPassword" class="form-label">Reset Password</label> -->
+            <input type="password" id="confirmPassword" class="form-control" placeholder="Reset Password" formControlName="confirmPassword">
+          </div>
+  
+          <button type="submit" class="btn mainBtn w-100 mb-3">Register</button>
+  
+          <div class="d-flex flex-column align-items-center">
+            <a routerLink="/reset-password" class="small color-for-links-in-auth">Forgot Password?</a>
+            <a routerLink="/login" class="small color-for-links-in-auth">Already have an account? Login!</a>
+          </div>
+  
+        </form>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+  

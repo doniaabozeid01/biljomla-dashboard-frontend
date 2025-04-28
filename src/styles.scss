@@ -10,7 +10,39 @@ body {
     color: white;
 }
 
-.bg-light-gray{
+.bg-light-gray {
     background-color: rgb(240, 240, 240);
+
+}
+
+
+
+input::placeholder {
+    color: gray;
+    /* لون التكست */
+    font-size: 12px;
+    /* حجم الخط */
+    font-weight: 400;
+    /* وزن الخط */
+    opacity: 1;
+    /* درجة الشفافية */
+}
+
+
+
+
+.mainBtn {
+    background-color: rgb(1, 3, 94);
+    color: white;
+}
+
+.mainBtn:hover {
+    background-color: rgb(1, 2, 68);
+    color: white;
+}
+
+.color-for-links-in-auth {
+    color: rgb(1, 3, 94);
+    text-decoration: none;
 
 }
